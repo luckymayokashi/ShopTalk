@@ -1,0 +1,134 @@
+.blog-content_item {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.popular-post_item-box {
+  height: 160px;
+  width: 342.609px;
+}
+
+.popular-post_item {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.popular-post_item-heading {
+  color: rgb(255, 255, 255);
+  font-family: metropolisbold;
+  font-size: 26.128px;
+  margin-bottom: 0px;
+  width: auto;
+  opacity: 1;
+  transition: height 0ms 0ms, opacity 600ms 0ms;
+}
+
+.popular-post_item-content-date {
+  font-size: 13px;
+}
+
+.popular-post_item-content-snippet {
+  font-size: 14px;
+  margin: 0px;
+  color: rgb(255, 255, 255);
+  margin-top: 20px;
+  margin-bottom: 1px;
+}
+
+.popular-post_item-content-author {
+  font-size: 13px;
+}
+
+.popular-post_item-content {
+  text-align: center;
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+  transition: height 0ms 400ms, opacity 400ms 0ms;
+}
+
+.popular-post_item-heading:hover .popular-post_item-content-snippet {
+  display: block;
+}
+
+.popular-post_item-heading:hover .popular-post_item-content-snippet {
+  display: block;
+}
+
+.popular-post_item-heading:hover .popular-post_item-content-snippet {
+  display: block;
+}
+
+.popular-post_item:hover h2 {
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+  transition: width 0ms 400ms, opacity 400ms 0ms;
+}
+
+.popular-post_item:hover .popular-post_item-content {
+  display: block;
+  width: auto;
+  opacity: 1;
+  transition: width 0ms 0ms, opacity 600ms 0ms;
+}
+
+#hero_content--article-title-box {
+  padding: 30px;
+}
+
+@media (max-width: 990px) {
+  #hero_content--article-title-box {
+    padding: 15px;
+  }
+}
+
+#hero_wrapper {
+  position: relative;
+  height: 507px;
+}
+
+#hero_content {
+  z-index: 100;
+  position: relative;
+  height: 515px;
+}
+
+@media (max-width: 360px) {
+  #hero_content--article-title {
+    font-size: 38.9px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 576px) {
+  #hero_content--article-title {
+    font-size: 40.9px;
+    height: 183px;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero_content--article-title {
+    font-size: 50.9px;
+  }
+}
+
+#hero_content--article-title {
+  color: rgb(255, 255, 255);
+  font-size: 68.88px;
+  height: 246px;
+}
+
+#hero_background {
+  z-index: -100;
+  height: 650px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
