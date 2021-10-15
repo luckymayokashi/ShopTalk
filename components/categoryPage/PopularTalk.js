@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { convertDate, convertHex } from "../../lib/funktions";
 
 const PopularTalk = ({ popularTalk }) => {
@@ -34,9 +35,11 @@ const PopularTalk = ({ popularTalk }) => {
             <p className="popular-post_item-content-snippet shoptalk-shadow">
               {item.excerpt}
             </p>
-            <a className="btn btn-primary shoptalk-btn" role="button">
-              Continue Reading
-            </a>
+            <Link href={`/${item.slug}`}>
+              <span className="btn btn-primary shoptalk-btn">
+                Continue Reading
+              </span>
+            </Link>
           </div>
         </div>
       </div>

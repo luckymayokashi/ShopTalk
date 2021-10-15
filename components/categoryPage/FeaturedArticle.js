@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { convertDate, convertHex } from "../../lib/funktions";
 
 const FeaturedArticle = ({ featuredPost }) => {
@@ -14,6 +15,7 @@ const FeaturedArticle = ({ featuredPost }) => {
   const postPublishDateRaw = data.published_at;
   const postAuthor = data.primary_author.name;
   const postExcerpt = data.excerpt;
+  const postSlug = data.slug;
   const featureImage = data.feature_image;
 
   //Converting Data to proper format
@@ -70,13 +72,11 @@ const FeaturedArticle = ({ featuredPost }) => {
                   >
                     {postExcerpt}
                   </p>
-                  <a
-                    className="btn btn-primary shoptalk-btn"
-                    role="button"
-                    href="blog-post.html"
-                  >
-                    Continue Reading
-                  </a>
+                  <Link href={`/${postSlug}`}>
+                    <span className="btn btn-primary shoptalk-btn">
+                      Continue Reading
+                    </span>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { convertDate } from "../lib/funktions";
 
 const RecentPost = ({ recentPost, category }) => {
@@ -46,9 +47,11 @@ const RecentPost = ({ recentPost, category }) => {
           <h2 style={{ marginBottom: "0px" }}>{item.title}</h2>
           <h5>By {item.primary_author.name}</h5>
           <p style={{ marginBottom: "8px" }}>{item.excerpt}</p>
-          <button className="btn btn-primary shoptalk-btn" type="button">
-            Continue Reading
-          </button>
+          <Link href={`/${item.slug}`}>
+            <span className="btn btn-primary shoptalk-btn">
+              Continue Reading
+            </span>
+          </Link>
         </div>
       </div>
     </React.Fragment>

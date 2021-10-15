@@ -3,15 +3,21 @@ import Image from "next/dist/client/image";
 import Link from "next/link";
 import React from "react";
 
+import RecentPost from "../../components/RecentPost";
+
 // FUNCTIONS
-import { getPosts, getSinglePost, getTags } from "../../lib/talkToGhost.js";
+import {
+  getPosts,
+  getSinglePost,
+  getFiveLatestPostCategory,
+} from "../../lib/talkToGhost.js";
 import { convertDate } from "../../lib/funktions";
 
 const Post = (props) => {
   //Things we need:
   //- Post Conent
   //- Recent Articles
-  console.log(props);
+  console.log(props.recentPost);
 
   const data = props.post[0];
   //Also build out meta for each page with next/Head to make sure that twitter shares look cool
@@ -33,7 +39,6 @@ const Post = (props) => {
   const postContentRAW = data.html;
 
   const postTagData = data.tags;
-  console.log(postTagData);
 
   const postTags = postTagData.map((item, key) => (
     <React.Fragment key={key}>
@@ -93,7 +98,7 @@ const Post = (props) => {
                 </div>
                 <h2 id="content_main-title">{title}</h2>
                 <section className="post-full-content">
-                  <div
+                  <article
                     className="post-content"
                     dangerouslySetInnerHTML={{ __html: postContentRAW }}
                   />
@@ -101,44 +106,10 @@ const Post = (props) => {
                 <hr />
               </div>
             </div>
-            <div className="row">
-              <div className="col-md-12 col-lg-10 offset-0 offset-lg-2">
-                <h3>Related Post</h3>
-                <div className="row blog-content_item">
-                  <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 blog-content_img">
-                    <span className="badge shoptalk-badge">Category</span>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
-                    <h5
-                      className="text-start"
-                      style={{
-                        fontSize: "13px",
-                        color: "rgb(95,95,95)",
-                        marginBottom: "1px",
-                      }}
-                    >
-                      July 1, 2021
-                    </h5>
-                    <h2 style={{ marginBottom: "0px" }}>
-                      The FitnessGram Pacer Test
-                    </h2>
-                    <h5>By John Marshton</h5>
-                    <p style={{ marginBottom: "8px" }}>
-                      The FitnessGram™ Pacer Test is a multistage aerobic
-                      capacity test that progressively gets more difficult as it
-                      continues. The 20 meter pacer test will begin in 30
-                      seconds.&nbsp;
-                    </p>
-                    <button
-                      className="btn btn-primary shoptalk-btn"
-                      type="button"
-                    >
-                      Continue Reading
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <RecentPost
+              recentPost={props.recentPost}
+              category={props.category}
+            />
           </div>
         </div>
         <div id="blog-comments" />
@@ -166,6 +137,10 @@ export async function getStaticProps(context) {
   //const post = await getSinglePost(context.params.postSlug);
   const post = await getSinglePost(context.params.postSlug);
 
+  const category = post[0].primary_tag.slug;
+
+  const recentPost = await getFiveLatestPostCategory(category);
+
   if (!post) {
     return {
       notFound: true,
@@ -173,6 +148,6 @@ export async function getStaticProps(context) {
   }
 
   return {
-    props: { post },
+    props: { post, recentPost },
   };
 }
