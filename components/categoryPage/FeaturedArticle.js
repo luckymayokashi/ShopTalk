@@ -4,7 +4,7 @@ import { convertDate, convertHex } from "../../lib/funktions";
 const FeaturedArticle = ({ featuredPost }) => {
   //Getting main data for the Featured Article
 
-  console.log(featuredPost);
+  //console.log(featuredPost);
   const data = featuredPost[0];
 
   //Parsing out indivisual data points for injection

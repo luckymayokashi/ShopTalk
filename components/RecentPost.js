@@ -3,7 +3,7 @@ import Link from "next/link";
 import { convertDate } from "../lib/funktions";
 
 const RecentPost = ({ recentPost, category }) => {
-  console.log(recentPost);
+  //console.log(recentPost);
 
   var categoryName;
 

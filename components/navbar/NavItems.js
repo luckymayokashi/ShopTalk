@@ -5,8 +5,8 @@ const NavItems = () => {
   //Map over array passed to compoenent and build out each item based on list of categories
   const router = useRouter();
 
-  console.log(router.query.categoryName);
-  console.log(router.pathname);
+  //console.log(router.query.categoryName);
+  //console.log(router.pathname);
 
   const selectedCategory = router.query.categoryName;
 

@@ -18,7 +18,7 @@ import {
 
 export default function CategoryPage(props) {
   //shoptalk/category
-  console.log(props.tags);
+  //console.log(props.tags);
 
   // const router = useRouter();
 
@@ -49,14 +49,6 @@ export async function getStaticProps(context) {
 
   const latestPost = await getLatestCategoryPost(category);
   const recentPost = await getFiveLatestPostCategory(category);
-
-  //Build fallback to display most recent if none are featured
-
-  // if (!posts) {
-  //   return {
-  //     notFound: true,
-  //   };
-  // }
 
   return {
     props: { latestPost, recentPost, category },

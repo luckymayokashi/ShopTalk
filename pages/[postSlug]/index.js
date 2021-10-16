@@ -17,7 +17,7 @@ const Post = (props) => {
   //Things we need:
   //- Post Conent
   //- Recent Articles
-  console.log(props.recentPost);
+  //console.log(props.recentPost);
 
   const data = props.post[0];
   //Also build out meta for each page with next/Head to make sure that twitter shares look cool
