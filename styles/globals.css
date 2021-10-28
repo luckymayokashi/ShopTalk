@@ -85,10 +85,11 @@ p {
   margin-top: 13px;
   /* border: #fff solid 1px; */
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  text-decoration: none;
 }
 
-.shoptalk-badge a {
-  text-decoration: none;
+.shoptalk-badge:hover {
+  color: #fff;
 }
 
 /* IMAGES */

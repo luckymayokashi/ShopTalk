@@ -1,5 +1,5 @@
-import Head from "next/dist/next-server/lib/head";
-import Image from "next/dist/client/image";
+import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -42,13 +42,13 @@ const Post = (props) => {
 
   const postTags = postTagData.map((item, key) => (
     <React.Fragment key={key}>
-      <Link href={`/tag/${item.slug}`}>
-        <span
+      <Link href={`/tag/${item.slug}`} passHref>
+        <a
           className="badge shoptalk-badge"
           style={{ backgroundColor: `${item.accent_color}`, margin: "5px" }}
         >
           {item.name}
-        </span>
+        </a>
       </Link>
     </React.Fragment>
   ));
@@ -148,6 +148,6 @@ export async function getStaticProps(context) {
   }
 
   return {
-    props: { post, recentPost },
+    props: { post, recentPost, category },
   };
 }

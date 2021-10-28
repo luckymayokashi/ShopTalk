@@ -73,9 +73,9 @@ const FeaturedArticle = ({ featuredPost }) => {
                     {postExcerpt}
                   </p>
                   <Link href={`/${postSlug}`}>
-                    <span className="btn btn-primary shoptalk-btn">
+                    <a className="btn btn-primary shoptalk-btn">
                       Continue Reading
-                    </span>
+                    </a>
                   </Link>
                 </div>
               </div>

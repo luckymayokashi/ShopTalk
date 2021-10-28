@@ -36,9 +36,7 @@ const PopularTalk = ({ popularTalk }) => {
               {item.excerpt}
             </p>
             <Link href={`/${item.slug}`}>
-              <span className="btn btn-primary shoptalk-btn">
-                Continue Reading
-              </span>
+              <a className="btn btn-primary shoptalk-btn">Continue Reading</a>
             </Link>
           </div>
         </div>

@@ -1,18 +1,17 @@
 import React from "react";
 import Link from "next/link";
-import { convertDate } from "../lib/funktions";
+import { convertDate, categoryTitle } from "../lib/funktions";
 
 const RecentPost = ({ recentPost, category }) => {
   //console.log(recentPost);
 
-  var categoryName;
+  let categoryName;
 
   const recentPostData = recentPost;
-  //MAke title change depending on type of page that its rendered on
 
   //Category check for recent post on category pages
   if (category) {
-    categoryName = category;
+    categoryName = categoryTitle(category);
   } else {
     categoryName = " the Shop";
   }
@@ -48,9 +47,7 @@ const RecentPost = ({ recentPost, category }) => {
           <h5>By {item.primary_author.name}</h5>
           <p style={{ marginBottom: "8px" }}>{item.excerpt}</p>
           <Link href={`/${item.slug}`}>
-            <span className="btn btn-primary shoptalk-btn">
-              Continue Reading
-            </span>
+            <a className="btn btn-primary shoptalk-btn">Continue Reading</a>
           </Link>
         </div>
       </div>

@@ -5,6 +5,8 @@ import NavMobile from "./NavMobile";
 import NavItems from "./NavItems";
 import NavEmailSignup from "./NavEmailSignup";
 
+import SWALogo from "../../public/SWA-Logo-Site.png";
+
 //build out local object to store all categories, then use this to build both menus. maybe store somewhere where it can be accessed from anywhere?
 const categories = {
   tags: [{ name: "Auto", meta: "auto" }],
@@ -21,15 +23,17 @@ const Navbar = () => {
                 className="d-flex flex-row justify-content-start align-items-baseline"
                 id="header_nav--brand"
               >
-                <a href="https://www.stockwiseauto.com/">
-                  <Image
-                    id="header_nav--logo"
-                    src="/SWA-Logo-Site.png"
-                    alt="StockWiseAuto Logo"
-                    width={158}
-                    height={72}
-                  />
-                </a>
+                <Link href="https://www.stockwiseauto.com/">
+                  <a>
+                    <Image
+                      id="header_nav--logo"
+                      src="/SWA-Logo-Site.png"
+                      alt="StockWiseAuto Logo"
+                      width={158}
+                      height={72}
+                    ></Image>
+                  </a>
+                </Link>
               </div>
             </div>
             <div className="col-8 col-sm-9 col-md-3 col-lg-3 col-xl-3 col-xxl-3 offset-md-0 offset-lg-1 d-flex flex-row align-items-center justify-content-sm-start align-items-sm-center justify-content-md-center align-items-md-end justify-content-lg-center justify-content-xl-center">
