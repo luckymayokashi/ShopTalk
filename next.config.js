@@ -2,6 +2,8 @@ module.exports = {
   reactStrictMode: true,
   images: {
     domains: ["shoptalk.ghost.io", "static.ghost.org"],
+    loader: "imgix",
+    path: "https://noop/",
   },
   env: {
     NEXT_PUBLIC_MAILCHIMP_URL:
