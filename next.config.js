@@ -1,4 +1,8 @@
 module.exports = {
+  assetPrefix: "/shoptalk",
+  publicRuntimeConfig: {
+    basePath: "/shoptalk",
+  },
   reactStrictMode: true,
   images: {
     domains: ["shoptalk.ghost.io", "static.ghost.org"],
